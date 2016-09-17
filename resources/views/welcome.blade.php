@@ -2,6 +2,15 @@
     <header class="am-topbar am-topbar-inverse">
     	<!-- ZUI 标准版压缩后的 CSS 文件 -->
 		<link rel="stylesheet" href="//cdn.bootcss.com/zui/1.5.0/css/zui.min.css">
+	<style type="text/css">
+	    .roll {border-radius:50%;/*圆角的半径*/}
+	    .roll {-webkit-transform:scale(1.1);-webkit-transition:all 0.3s linear;}
+	    .roll {-webkit-animation:zq 6s infinite linear;}
+	    @-webkit-keyframes zq{
+		from{-webkit-transform:rotate(0deg);}
+		to{-webkit-transform:rotate(360deg);}
+	    }
+	</style>
     </header>
     <body>
     	<nav class="navbar navbar-inverse text-center" role="navigation">
@@ -147,6 +156,13 @@
 					},
 					supplied: "mp3, m4a, oga",
 					useStateClassSkin: true
+				});
+				$("input[type='image']").click(function(){
+					if($(this).hasClass('roll')){
+						$(this).removeClass('roll');
+					}else{
+						$(this).addClass('roll');
+					}
 				});
 			});
 			//]]>
